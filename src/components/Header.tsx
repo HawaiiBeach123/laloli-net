@@ -8,7 +8,7 @@ import styles from './Header.module.css';
 
 // TODO: Uncomment pages as they become ready
 const navItems: { href: string; en: string; zh: string }[] = [
-  // { href: '/about', en: 'About', zh: '关于我们' },
+  { href: '/about', en: 'About', zh: '关于我们' },
   // { href: '/programs', en: 'Programs', zh: '项目服务' },
   // { href: '/events', en: 'Events', zh: '活动日历' },
   // { href: '/news', en: 'News', zh: '新闻动态' },
