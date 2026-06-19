@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useI18n } from '@/lib/i18n';
 import styles from './page.module.css';
 
+const ZEFFY_URL = 'https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-16381';
+
 export default function DonatePage() {
   const { t } = useI18n();
   const [customAmount, setCustomAmount] = useState('');
@@ -121,9 +123,9 @@ export default function DonatePage() {
                     <li key={i}>{benefit}</li>
                   ))}
                 </ul>
-                <button className={tier.featured ? styles.tierBtn : styles.tierBtnOutline}>
+                <a href={ZEFFY_URL} target="_blank" rel="noopener noreferrer" className={tier.featured ? styles.tierBtn : styles.tierBtnOutline}>
                   {t('Donate Now', '立即捐赠')} →
-                </button>
+                </a>
               </div>
             ))}
           </div>
@@ -154,9 +156,9 @@ export default function DonatePage() {
                 onChange={(e) => setCustomAmount(e.target.value)}
               />
             </div>
-            <button className={styles.customBtn}>
+            <a href={ZEFFY_URL} target="_blank" rel="noopener noreferrer" className={styles.customBtn}>
               {t('Donate', '捐赠')} ❤️
-            </button>
+            </a>
           </div>
         </div>
       </section>
