@@ -5,16 +5,17 @@ import { useI18n } from '@/lib/i18n';
 import { useState } from 'react';
 import styles from './Header.module.css';
 
+// TODO: Uncomment pages as they become ready
 const navItems = [
-  { href: '/about', en: 'About', zh: '关于我们' },
-  { href: '/programs', en: 'Programs', zh: '项目服务' },
-  { href: '/events', en: 'Events', zh: '活动日历' },
-  { href: '/news', en: 'News', zh: '新闻动态' },
-  { href: '/gallery', en: 'Gallery', zh: '图片集' },
-  { href: '/team', en: 'Team', zh: '团队成员' },
-  { href: '/volunteer', en: 'Volunteer', zh: '志愿服务' },
-  { href: '/donate', en: 'Donate', zh: '捐赠支持' },
-  { href: '/contact', en: 'Contact', zh: '联系我们' },
+  // { href: '/about', en: 'About', zh: '关于我们' },
+  // { href: '/programs', en: 'Programs', zh: '项目服务' },
+  // { href: '/events', en: 'Events', zh: '活动日历' },
+  // { href: '/news', en: 'News', zh: '新闻动态' },
+  // { href: '/gallery', en: 'Gallery', zh: '图片集' },
+  // { href: '/team', en: 'Team', zh: '团队成员' },
+  // { href: '/volunteer', en: 'Volunteer', zh: '志愿服务' },
+  // { href: '/donate', en: 'Donate', zh: '捐赠支持' },
+  // { href: '/contact', en: 'Contact', zh: '联系我们' },
 ];
 
 export default function Header() {
