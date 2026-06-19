@@ -212,86 +212,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ==================== LATEST NEWS ==================== */}
-      <section className={styles.newsSection}>
-        <div className={styles.sectionHeader}>
-          <span className={styles.sectionLabel}>
-            {t('Latest News', '最新动态')}
-          </span>
-          <h2 className={styles.sectionTitle}>
-            {t('Stories of Impact', '影响力故事')}
-          </h2>
-          <p className={styles.sectionSubtitle}>
-            {t(
-              'Stay updated with the latest stories, events, and milestones from our community.',
-              '关注来自我们社区的最新故事、活动和里程碑。'
-            )}
-          </p>
-        </div>
-
-        <div className={styles.newsGrid}>
-          {[
-            {
-              emoji: '🎉',
-              date: t('June 12, 2026', '2026年6月12日'),
-              title: t(
-                'Annual Gala Raises Record $500K for Education',
-                '年度晚宴筹集创纪录50万美元用于教育'
-              ),
-              excerpt: t(
-                'Our 2026 Annual Gala brought together over 400 guests and raised a record-breaking amount for our scholarship fund.',
-                '我们的2026年度晚宴汇聚了400多位嘉宾，为奖学金基金筹集了创纪录的金额。'
-              ),
-              bg: 'linear-gradient(135deg, #1a2744, #d4a843)',
-            },
-            {
-              emoji: '🌱',
-              date: t('May 28, 2026', '2026年5月28日'),
-              title: t(
-                'New Community Garden Opens in Downtown',
-                '市中心社区花园正式开放'
-              ),
-              excerpt: t(
-                'The LALOLI Community Garden is now open, providing fresh produce and green space to over 200 local families.',
-                '乐荔社区花园现已开放，为200多个本地家庭提供新鲜农产品和绿色空间。'
-              ),
-              bg: 'linear-gradient(135deg, #2d4a7a, #48bb78)',
-            },
-            {
-              emoji: '🤝',
-              date: t('May 10, 2026', '2026年5月10日'),
-              title: t(
-                'Partnership with Global Education Alliance',
-                '与全球教育联盟建立合作伙伴关系'
-              ),
-              excerpt: t(
-                'We are thrilled to announce our partnership with GEA, expanding our reach to 5 new countries this year.',
-                '我们很高兴地宣布与GEA建立合作，今年将把我们的影响力扩展到5个新国家。'
-              ),
-              bg: 'linear-gradient(135deg, #253d66, #2a5298)',
-            },
-          ].map((news, i) => (
-            <div className={styles.newsCard} key={i}>
-              <div className={styles.newsCardImage}>
-                <div
-                  className={styles.newsImagePlaceholder}
-                  style={{ background: news.bg }}
-                >
-                  {news.emoji}
-                </div>
-              </div>
-              <div className={styles.newsCardBody}>
-                <span className={styles.newsDate}>{news.date}</span>
-                <h3 className={styles.newsCardTitle}>{news.title}</h3>
-                <p className={styles.newsExcerpt}>{news.excerpt}</p>
-                <Link href="/news" className={styles.newsReadMore}>
-                  {t('Read More', '阅读更多')} →
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* LATEST NEWS / STORIES - hidden for now
+      */}
 
       {/* ==================== CTA BANNER ==================== */}
       <section className={styles.ctaBanner}>
