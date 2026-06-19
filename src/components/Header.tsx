@@ -16,7 +16,8 @@ const navItems: { href: string; en: string; zh: string }[] = [
   // { href: '/team', en: 'Team', zh: '团队成员' },
   // { href: '/volunteer', en: 'Volunteer', zh: '志愿服务' },
   // { href: '/donate', en: 'Donate', zh: '捐赠支持' },
-  // { href: '/contact', en: 'Contact', zh: '联系我们' },
+  { href: '/donate', en: 'Donate', zh: '捐赠支持' },
+  { href: '/contact', en: 'Contact', zh: '联系我们' },
 ];
 
 export default function Header() {
