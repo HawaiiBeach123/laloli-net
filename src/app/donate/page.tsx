@@ -163,7 +163,7 @@ export default function DonatePage() {
         </div>
       </section>
 
-      {/* ===== YOUR IMPACT ===== */}
+      {/* YOUR IMPACT - hidden until we have real numbers
       <section className={styles.sectionDark}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
@@ -188,6 +188,7 @@ export default function DonatePage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* ===== PARTNERS ===== */}
       <section className={styles.sectionAlt}>

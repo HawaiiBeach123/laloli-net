@@ -148,7 +148,7 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      {/* ── Impact Metrics ── */}
+      {/* Impact Metrics - hidden until we have real numbers
       <section className={`${styles.section} ${styles.impactSection}`}>
         <div className={styles.container}>
           <div className={styles.impactHeader}>
@@ -178,6 +178,7 @@ export default function ProgramsPage() {
           </div>
         </div>
       </section>
+      */}
     </>
   );
 }

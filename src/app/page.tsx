@@ -50,7 +50,7 @@ export default function Home() {
         <div className={styles.heroScrollIndicator}>↓</div>
       </section>
 
-      {/* ==================== IMPACT STATS ==================== */}
+      {/* IMPACT STATS - hidden until we have real numbers
       <section className={styles.statsSection}>
         <div className={styles.statsContainer}>
           <div className={styles.statsGrid}>
@@ -85,6 +85,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       {/* ==================== MISSION PREVIEW ==================== */}
       <section className={styles.missionSection}>

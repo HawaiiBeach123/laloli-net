@@ -8,12 +8,12 @@ const featuredArticle = {
   date: { en: 'June 15, 2026', zh: '2026年6月15日' },
   category: { en: 'Milestone', zh: '里程碑' },
   title: {
-    en: 'LALOLI Pathway Celebrates 500 Students Served in First Year',
-    zh: 'LALOLI Pathway庆祝首年服务500名学生',
+    en: 'LALOLI Pathway Celebrates a Successful First Year',
+    zh: 'LALOLI Pathway庆祝成功的第一年',
   },
   excerpt: {
-    en: 'Since launching our first programs in 2025, LALOLI Pathway has served over 500 K-12 students through AI-powered learning tools, mental health workshops, and mentorship. This milestone reflects the dedication of our growing volunteer team and the trust of families in our mission to help youth Laugh, Love, and Live.',
-    zh: '自2025年启动首批项目以来，LALOLI Pathway已通过AI学习工具、心理健康工作坊和导师辅导服务了500多名K-12学生。这一里程碑体现了志愿者团队的奉献和家庭对我们使命的信任。',
+    en: 'Since launching our first programs in 2025, LALOLI Pathway has been empowering K-12 students through AI-powered learning tools, mental health workshops, and mentorship. This milestone reflects the dedication of our growing volunteer team and the trust of families in our mission to help youth Laugh, Love, and Live.',
+    zh: '自2025年启动首批项目以来，LALOLI Pathway一直通过AI学习工具、心理健康工作坊和导师辅导赋能K-12学生。这一里程碑体现了志愿者团队的奉献和家庭对我们使命的信任。',
   },
   readTime: { en: '5 min read', zh: '5分钟阅读' },
 };

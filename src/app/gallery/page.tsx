@@ -179,27 +179,11 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Stats Bar */}
+      {/* Stats Bar - hidden until we have real numbers
       <section className={styles.statsBar}>
-        <div className={styles.statsContainer}>
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>100+</span>
-            <span className={styles.statLabel}>{t('Photos Captured', '拍摄照片')}</span>
-          </div>
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>10+</span>
-            <span className={styles.statLabel}>{t('Events Documented', '记录活动')}</span>
-          </div>
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>500+</span>
-            <span className={styles.statLabel}>{t('Smiles Shared', '分享笑容')}</span>
-          </div>
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>5</span>
-            <span className={styles.statLabel}>{t('Communities Reached', '覆盖社区')}</span>
-          </div>
-        </div>
+        ...
       </section>
+      */}
     </div>
   );
 }
