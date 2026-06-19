@@ -1,0 +1,505 @@
+/* ============================================================
+   Events Page — page.module.css
+   ============================================================ */
+
+/* ─── Hero ─── */
+.hero {
+  position: relative;
+  padding: 140px 0 100px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1e3a5f 50%, #0f1a2e 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  padding: 0 var(--space-lg);
+}
+
+.heroBadge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(212, 168, 67, 0.15);
+  color: var(--color-accent-light);
+  border: 1px solid rgba(212, 168, 67, 0.25);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+  letter-spacing: 0.5px;
+}
+
+.hero h1 {
+  color: var(--color-white);
+  margin-bottom: var(--space-lg);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.heroDecor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heroCircle1 {
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 168, 67, 0.12), transparent 70%);
+}
+
+.heroCircle2 {
+  position: absolute;
+  bottom: -40px;
+  left: -60px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 168, 67, 0.08), transparent 70%);
+}
+
+/* ─── Shared Section ─── */
+.page {
+  background: var(--color-bg);
+}
+
+.section {
+  padding: var(--space-4xl) 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.sectionTag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, rgba(212, 168, 67, 0.1), rgba(212, 168, 67, 0.05));
+  color: var(--color-accent);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: var(--space-md);
+}
+
+.sectionHeader h2 {
+  margin-bottom: var(--space-md);
+  position: relative;
+  display: inline-block;
+}
+
+.sectionHeader h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+  border-radius: 2px;
+}
+
+.sectionHeader p {
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+  max-width: 560px;
+  margin: var(--space-lg) auto 0;
+}
+
+/* ─── Upcoming Events Timeline ─── */
+.eventsTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.eventCard {
+  display: flex;
+  gap: var(--space-xl);
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+  animation: fadeInUp 0.6s ease both;
+}
+
+.eventCard:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: rgba(212, 168, 67, 0.2);
+}
+
+/* Date Badge */
+.dateBadge {
+  flex-shrink: 0;
+  width: 88px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1e3a5f 100%);
+  border-radius: var(--radius-md);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.dateBadge::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+}
+
+.dateMonth {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-accent-light);
+}
+
+.dateDay {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  margin: 2px 0;
+}
+
+.dateYear {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Event Body */
+.eventBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.eventMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.eventTag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: linear-gradient(135deg, rgba(212, 168, 67, 0.12), rgba(212, 168, 67, 0.06));
+  color: var(--color-accent);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.eventBody h3 {
+  font-size: 1.3rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+}
+
+.eventCard:hover .eventBody h3 {
+  color: var(--color-accent);
+}
+
+.eventDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.eventDetail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.eventDetail svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.eventDescription {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+}
+
+.registerBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px 24px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 15px rgba(212, 168, 67, 0.25);
+}
+
+.registerBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(212, 168, 67, 0.4);
+}
+
+.registerBtn svg {
+  transition: transform var(--transition-fast);
+}
+
+.registerBtn:hover svg {
+  transform: translateX(3px);
+}
+
+/* ─── Past Events ─── */
+.pastSection {
+  background: var(--color-bg-alt, #f3efe8);
+}
+
+.pastGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.pastCard {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+  animation: fadeInUp 0.6s ease both;
+}
+
+.pastCard:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.pastImagePlaceholder {
+  position: relative;
+  height: 200px;
+  background: linear-gradient(135deg, #e8e0d4 0%, #d4cfc7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pastImageIcon {
+  color: #b8b0a4;
+  opacity: 0.6;
+}
+
+.pastOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-sm) var(--space-md);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+  display: flex;
+  justify-content: flex-end;
+}
+
+.attendeeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius-full);
+  color: var(--color-white);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.pastBody {
+  padding: var(--space-lg);
+}
+
+.pastDate {
+  font-size: 0.8rem;
+  color: var(--color-text-muted, #a0aec0);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pastBody h3 {
+  font-size: 1.15rem;
+  margin: var(--space-sm) 0;
+  color: var(--color-primary);
+}
+
+.pastBody p {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.viewGalleryLink {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.viewGalleryLink:hover {
+  color: var(--color-primary);
+}
+
+/* ─── CTA ─── */
+.ctaSection {
+  padding: var(--space-4xl) var(--space-lg);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1e3a5f 100%);
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaContent h2 {
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.ctaContent p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: var(--space-xl);
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 14px 36px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 20px rgba(212, 168, 67, 0.35);
+}
+
+.ctaBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 35px rgba(212, 168, 67, 0.5);
+}
+
+/* ─── Animation ─── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 968px) {
+  .pastGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 120px 0 80px;
+  }
+
+  .eventCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dateBadge {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+  }
+
+  .dateBadge::after {
+    display: none;
+  }
+
+  .dateDay {
+    font-size: 1.5rem;
+  }
+
+  .pastGrid {
+    grid-template-columns: 1fr;
+  }
+}

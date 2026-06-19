@@ -1,0 +1,516 @@
+/* ============================================================
+   Volunteer Page Styles
+   ============================================================ */
+
+/* === HERO === */
+.hero {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #2d4a7a 50%, #3b5998 100%);
+  overflow: hidden;
+  padding: var(--space-4xl) var(--space-lg) var(--space-3xl);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 25% 75%, rgba(212, 168, 67, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 25%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, var(--color-bg), transparent);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.heroEmoji {
+  font-size: 3.5rem;
+  margin-bottom: var(--space-lg);
+  display: inline-block;
+  animation: wave 2.5s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  40% { transform: rotate(14deg); }
+  50% { transform: rotate(-4deg); }
+  60% { transform: rotate(10deg); }
+  70% { transform: rotate(0deg); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.heroTitle {
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.heroSub {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* === SECTION SHARED === */
+.section {
+  padding: var(--space-4xl) var(--space-lg);
+}
+
+.sectionAlt {
+  composes: section;
+  background: var(--color-white);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.sectionHeader h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--space-md);
+}
+
+.sectionHeader h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+  border-radius: 2px;
+}
+
+.sectionHeader p {
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: var(--space-lg) auto 0;
+}
+
+/* === WHY VOLUNTEER BENEFITS === */
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.benefitCard {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  text-align: center;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.benefitCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-accent);
+}
+
+.benefitEmoji {
+  font-size: 2.8rem;
+  margin-bottom: var(--space-lg);
+  display: inline-block;
+}
+
+.benefitCard h3 {
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
+}
+
+.benefitCard p {
+  color: var(--color-text-light);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* === OPPORTUNITIES === */
+.oppsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+
+.oppCard {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.oppCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.oppCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.oppCard:hover::before {
+  opacity: 1;
+}
+
+.oppHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.oppEmoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.oppHeader h3 {
+  color: var(--color-primary);
+  font-size: 1.15rem;
+}
+
+.oppDesc {
+  color: var(--color-text-light);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: var(--space-lg);
+  flex: 1;
+}
+
+.oppMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.oppTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  color: var(--color-text-light);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* === SIGNUP FORM === */
+.formSection {
+  composes: section;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #2d4a7a 100%);
+}
+
+.formWrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-xl);
+}
+
+.formWrapper h2 {
+  text-align: center;
+  margin-bottom: var(--space-xs);
+}
+
+.formSubtitle {
+  text-align: center;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-xl);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.formGroupFull {
+  composes: formGroup;
+  grid-column: 1 / -1;
+}
+
+.formLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.formInput {
+  padding: 12px 16px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.formInput:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px var(--color-accent-glow);
+  background: var(--color-white);
+}
+
+.formTextarea {
+  composes: formInput;
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+/* Checkboxes */
+.checkboxGroup {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+  border: 2px solid transparent;
+  user-select: none;
+}
+
+.checkboxLabel:hover {
+  background: var(--color-accent-glow);
+}
+
+.checkboxLabel input[type='checkbox'] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-text-muted);
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.checkboxLabel input[type='checkbox']:checked {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.checkboxLabel input[type='checkbox']:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.formSubmit {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-xl);
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 16px 48px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  color: var(--color-primary);
+  box-shadow: 0 4px 20px rgba(212, 168, 67, 0.3);
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(212, 168, 67, 0.45);
+}
+
+/* === TESTIMONIALS === */
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.testimonialCard {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.quoteIcon {
+  font-size: 2.5rem;
+  color: var(--color-accent-light);
+  margin-bottom: var(--space-md);
+  line-height: 1;
+}
+
+.testimonialText {
+  color: var(--color-text);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  font-style: italic;
+  flex: 1;
+  margin-bottom: var(--space-lg);
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.authorAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.authorInfo strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-primary);
+}
+
+.authorInfo span {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+/* === Responsive === */
+@media (max-width: 968px) {
+  .benefitsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .benefitsGrid > :last-child {
+    grid-column: 1 / -1;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+  .checkboxGroup {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 340px;
+    padding: var(--space-3xl) var(--space-md) var(--space-2xl);
+  }
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+  }
+  .benefitsGrid > :last-child {
+    max-width: none;
+  }
+  .oppsGrid {
+    grid-template-columns: 1fr;
+  }
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  .formWrapper {
+    padding: var(--space-xl);
+  }
+}

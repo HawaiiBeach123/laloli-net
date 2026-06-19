@@ -1,142 +1,743 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+/* ============================================================
+   Home Page — page.module.css
+   Premium nonprofit landing page with animations & gradients
+   ============================================================ */
 
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
+/* ======================== HERO ======================== */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 72px);
   display: flex;
-  flex: 1;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  overflow: hidden;
+  background: linear-gradient(
+    160deg,
+    var(--color-bg-dark) 0%,
+    var(--color-primary) 40%,
+    #253d66 70%,
+    #1e3355 100%
+  );
 }
 
-.main {
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(212, 168, 67, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(45, 74, 122, 0.2) 0%, transparent 50%);
+  z-index: 1;
+}
+
+/* Floating decorative shapes */
+.floatingShape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.08;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shape1 {
+  width: 500px;
+  height: 500px;
+  top: -120px;
+  right: -80px;
+  background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+  animation: float1 20s ease-in-out infinite;
+}
+
+.shape2 {
+  width: 300px;
+  height: 300px;
+  bottom: -60px;
+  left: -60px;
+  background: radial-gradient(circle, var(--color-accent-light) 0%, transparent 70%);
+  animation: float2 15s ease-in-out infinite;
+}
+
+.shape3 {
+  width: 200px;
+  height: 200px;
+  top: 30%;
+  left: 10%;
+  background: radial-gradient(circle, var(--color-white) 0%, transparent 70%);
+  animation: float3 18s ease-in-out infinite;
+}
+
+.shape4 {
+  width: 150px;
+  height: 150px;
+  bottom: 20%;
+  right: 15%;
+  background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+  animation: float1 22s ease-in-out infinite reverse;
+}
+
+.shape5 {
+  width: 80px;
+  height: 80px;
+  top: 15%;
+  right: 30%;
+  background: var(--color-accent);
+  opacity: 0.12;
+  animation: float2 12s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(20px, -30px) scale(1.05); }
+  50% { transform: translate(-15px, 20px) scale(0.95); }
+  75% { transform: translate(10px, 15px) scale(1.02); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(-25px, 15px) rotate(5deg); }
+  66% { transform: translate(20px, -10px) rotate(-5deg); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0); opacity: 0.06; }
+  50% { transform: translate(30px, -20px); opacity: 0.12; }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 820px;
+  padding: var(--space-3xl) var(--space-lg);
+  animation: heroFadeIn 1s ease-out;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: rgba(212, 168, 67, 0.15);
+  border: 1px solid rgba(212, 168, 67, 0.3);
+  color: var(--color-accent-light);
+  padding: 6px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xl);
+  animation: heroFadeIn 1s ease-out 0.2s both;
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  color: var(--color-white);
+  line-height: 1.15;
+  margin-bottom: var(--space-lg);
+  animation: heroFadeIn 1s ease-out 0.3s both;
+}
+
+.heroTitleAccent {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto var(--space-2xl);
+  animation: heroFadeIn 1s ease-out 0.45s both;
+}
+
+.heroCtas {
   display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: heroFadeIn 1s ease-out 0.6s both;
 }
 
-.intro {
+.heroScrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: bounce 2s ease-in-out infinite;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.5rem;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-12px); }
+  60% { transform: translateX(-50%) translateY(-6px); }
+}
+
+/* ======================== STATS ======================== */
+.statsSection {
+  position: relative;
+  padding: var(--space-3xl) 0;
+  background: var(--color-white);
+  margin-top: -60px;
+  z-index: 3;
+}
+
+.statsContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.statCard {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.statCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.statCard:hover::before {
+  opacity: 1;
+}
+
+.statIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  font-size: 1.5rem;
+  background: var(--color-accent-glow);
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
+.statNumber {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.statLabel {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ======================== MISSION ======================== */
+.missionSection {
+  padding: var(--space-4xl) 0;
+  background: var(--color-bg);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-size: 0.8rem;
   font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+.sectionTitle {
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+  position: relative;
+  display: inline-block;
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
+.sectionTitle::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+  border-radius: 2px;
+  margin: 12px auto 0;
 }
 
-.ctas {
+.sectionSubtitle {
+  color: var(--color-text-light);
+  font-size: 1.05rem;
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.missionCard {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl) var(--space-xl);
+  text-align: center;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.missionCard::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: linear-gradient(180deg, transparent, var(--color-accent-glow));
+  transition: height var(--transition-slow);
+}
+
+.missionCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(212, 168, 67, 0.2);
+}
+
+.missionCard:hover::after {
+  height: 50%;
+}
+
+.missionIconWrap {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  justify-content: center;
+  margin: 0 auto var(--space-lg);
+  font-size: 1.8rem;
+  color: var(--color-white);
+  transition: transform var(--transition-base);
+  position: relative;
+  z-index: 1;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.missionCard:hover .missionIconWrap {
+  transform: scale(1.1) rotate(-5deg);
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.missionCardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  position: relative;
+  z-index: 1;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+.missionCardDesc {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+/* ======================== PROGRAMS ======================== */
+.programsSection {
+  padding: var(--space-4xl) 0;
+  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-white) 100%);
+}
+
+.programsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.programCard {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  background: var(--color-white);
+}
+
+.programCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  padding: 2px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-primary-light), var(--color-accent-light));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.programCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.programCard:hover::before {
+  opacity: 1;
+}
+
+.programCardImage {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.programCardImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(26, 39, 68, 0.5) 100%);
+}
+
+.programCardBody {
+  padding: var(--space-xl);
+}
+
+.programTag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  background: var(--color-accent-glow);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-sm);
+}
+
+.programCardTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  line-height: 1.3;
+}
+
+.programCardDesc {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.programLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  transition: all var(--transition-fast);
+}
+
+.programLink:hover {
+  gap: 10px;
+  color: var(--color-primary);
+}
+
+/* ======================== NEWS ======================== */
+.newsSection {
+  padding: var(--space-4xl) 0;
+  background: var(--color-bg);
+}
+
+.newsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.newsCard {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.newsCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.newsCardImage {
+  width: 100%;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsCardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.newsCard:hover .newsCardImage img {
+  transform: scale(1.05);
+}
+
+.newsImagePlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.newsCardBody {
+  padding: var(--space-xl);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.newsDate {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+}
+
+.newsCardTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  line-height: 1.35;
+  transition: color var(--transition-fast);
+}
+
+.newsCard:hover .newsCardTitle {
+  color: var(--color-accent);
+}
+
+.newsExcerpt {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  flex: 1;
+}
+
+.newsReadMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  margin-top: var(--space-md);
+  transition: all var(--transition-fast);
+}
+
+.newsReadMore:hover {
+  gap: 10px;
+  color: var(--color-primary);
+}
+
+/* ======================== CTA BANNER ======================== */
+.ctaBanner {
+  padding: var(--space-4xl) var(--space-lg);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 50%,
+    #2a5298 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaBanner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 10% 50%, rgba(212, 168, 67, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 30%, rgba(212, 168, 67, 0.1) 0%, transparent 40%);
+}
+
+.ctaDecor1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(212, 168, 67, 0.06);
+  top: -100px;
+  right: -50px;
+  animation: float1 20s ease-in-out infinite;
+}
+
+.ctaDecor2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  bottom: -60px;
+  left: -30px;
+  animation: float2 15s ease-in-out infinite;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.ctaSubtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--space-2xl);
+  line-height: 1.7;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ======================== RESPONSIVE ======================== */
+@media (max-width: 968px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  .missionGrid,
+  .programsGrid,
+  .newsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
+@media (max-width: 640px) {
+  .hero {
+    min-height: 85vh;
   }
 
-  .intro {
-    gap: 16px;
+  .heroContent {
+    padding: var(--space-2xl) var(--space-md);
   }
 
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+  .heroCtas {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .page {
-    --background: #000;
-    --foreground: #000;
+  .statsSection {
+    margin-top: -30px;
+  }
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
+  .statsGrid,
+  .missionGrid,
+  .programsGrid,
+  .newsGrid {
+    grid-template-columns: 1fr;
+  }
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .statCard {
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .ctaBanner {
+    padding: var(--space-3xl) var(--space-lg);
   }
 }
