@@ -26,8 +26,8 @@ const boardMembers: BoardMember[] = [
     name: { en: 'Linda Wang', zh: '王琳达' },
     title: { en: 'Chairperson', zh: '主席' },
     bio: {
-      en: 'With 20 years of nonprofit leadership, Linda brings strategic vision and deep community connections to Laloli Foundation.',
-      zh: '凭借20年的非营利组织领导经验，琳达为乐乐力基金会带来了战略远见和深厚的社区联系。'
+      en: 'With 20 years of nonprofit leadership, Linda brings strategic vision and deep community connections to LALOLI Pathway.',
+      zh: '凭借20年的非营利组织领导经验，琳达为LALOLI Pathway带来了战略远见和深厚的社区联系。'
     },
   },
   {
@@ -258,8 +258,8 @@ export default function TeamPage() {
           </h2>
           <p className={styles.ctaDesc}>
             {t(
-              'We\'re always looking for passionate individuals who want to make a difference. Explore opportunities to join Laloli Foundation.',
-              '我们一直在寻找有热情、想要改变世界的人。探索加入乐乐力基金会的机会。'
+              'We\'re always looking for passionate individuals who want to make a difference. Explore opportunities to join LALOLI Pathway.',
+              '我们一直在寻找有热情、想要改变世界的人。探索加入LALOLI Pathway的机会。'
             )}
           </p>
           <div className={styles.ctaButtons}>

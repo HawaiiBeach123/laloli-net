@@ -20,20 +20,20 @@ export default function Home() {
 
         <div className={styles.heroContent}>
           <span className={styles.heroLabel}>
-            ✦ {t('Laloli Foundation', '乐荔基金会')}
+            ✦ {t('LALOLI Pathway', 'LALOLI Pathway')}
           </span>
 
           <h1 className={styles.heroTitle}>
-            {t('Building Bridges of', '架起')}{' '}
+            {t('Empowering Youth to', '赋能青少年')}{' '}
             <span className={styles.heroTitleAccent}>
-              {t('Hope & Compassion', '希望与爱的桥梁')}
+              {t('Laugh, Love, Live', '笑着，爱着，活着')}
             </span>
           </h1>
 
           <p className={styles.heroSubtitle}>
             {t(
-              'Empowering communities through education, cultural exchange, and dedicated service — creating lasting impact for a brighter future.',
-              '通过教育、文化交流和社区服务赋能社区 — 为更光明的未来创造持久影响。'
+              'LALOLI Pathway empowers children and young adults through accessible education, mental health support, mentorship, and AI-driven learning tools — nurturing intellectual growth and emotional well-being.',
+              'LALOLI Pathway 通过优质教育、心理健康支持、导师辅导和AI学习工具赋能儿童和青年——培养智力成长和情感幸福。'
             )}
           </p>
 
@@ -107,26 +107,26 @@ export default function Home() {
           {[
             {
               icon: '🎓',
-              title: t('Education', '教育'),
+              title: t('Education & AI Learning', '教育与AI学习'),
               desc: t(
-                'Providing access to quality education through scholarships, mentorship programs, and learning resources for underserved communities.',
-                '通过奖学金、导师计划和学习资源，为弱势社区提供优质教育机会。'
+                'Providing accessible educational resources and AI-driven learning tools that help children and young adults reach their full academic potential.',
+                '提供优质教育资源和AI驱动的学习工具，帮助儿童和青年充分发挥学术潜力。'
               ),
             },
             {
-              icon: '🌍',
-              title: t('Community', '社区'),
+              icon: '💚',
+              title: t('Mental Health & Well-being', '心理健康与幸福'),
               desc: t(
-                'Strengthening local communities through volunteer initiatives, health programs, and sustainable development projects.',
-                '通过志愿服务、健康项目和可持续发展计划，增强社区凝聚力。'
+                'Ensuring a balanced approach to personal development through mental health support, emotional wellness programs, and counseling resources.',
+                '通过心理健康支持、情感健康计划和咨询资源，确保个人发展的平衡方式。'
               ),
             },
             {
-              icon: '🎭',
-              title: t('Culture', '文化'),
+              icon: '🌱',
+              title: t('Mentorship & Growth', '导师辅导与成长'),
               desc: t(
-                'Bridging cultures through exchange programs, arts initiatives, and celebrations of diversity that bring people together.',
-                '通过交流项目、艺术活动和多元文化庆典，搭建文化沟通的桥梁。'
+                'Guiding individuals through challenges and opportunities with innovative mentorship programs, environmental initiatives, and life skills training.',
+                '通过创新的导师计划、环保倡议和生活技能培训，引导个人应对挑战和把握机遇。'
               ),
             },
           ].map((item, i) => (
@@ -159,32 +159,32 @@ export default function Home() {
         <div className={styles.programsGrid}>
           {[
             {
-              emoji: '📖',
-              tag: t('Education', '教育'),
-              title: t('Youth Scholarship Initiative', '青年奖学金计划'),
+              emoji: '🤖',
+              tag: t('AI Education', 'AI教育'),
+              title: t('AI-Powered Learning Hub', 'AI学习中心'),
               desc: t(
-                'Supporting talented students from underrepresented backgrounds with full scholarships and mentorship opportunities.',
-                '为来自弱势背景的优秀学生提供全额奖学金和导师指导机会。'
+                'Cutting-edge AI tutoring tools and personalized learning paths that adapt to each student\'s pace and style.',
+                '前沿AI辅导工具和个性化学习路径，适应每个学生的节奏和风格。'
               ),
               color: 'linear-gradient(135deg, #1a2744, #2d4a7a)',
             },
             {
-              emoji: '🏡',
-              tag: t('Community', '社区'),
-              title: t('Community Wellness Program', '社区健康计划'),
+              emoji: '🧠',
+              tag: t('Mental Health', '心理健康'),
+              title: t('Youth Wellness Program', '青少年身心健康计划'),
               desc: t(
-                'Providing health screenings, wellness workshops, and mental health resources to families in need.',
-                '为有需要的家庭提供健康筛查、健康工作坊和心理健康资源。'
+                'Counseling, peer support groups, and emotional resilience workshops designed specifically for K-12 students.',
+                '专为K-12学生设计的心理咨询、同伴支持小组和情感韧性工作坊。'
               ),
               color: 'linear-gradient(135deg, #2d4a7a, #3a6db5)',
             },
             {
-              emoji: '🌏',
-              tag: t('Culture', '文化'),
-              title: t('Cultural Bridge Exchange', '文化桥梁交流项目'),
+              emoji: '🌿',
+              tag: t('Environment', '环保'),
+              title: t('Green Leaders Initiative', '绿色领袖计划'),
               desc: t(
-                'Connecting young leaders across borders through immersive cultural exchange and collaborative projects.',
-                '通过沉浸式文化交流和合作项目，连接跨国青年领袖。'
+                'Environmental education and hands-on sustainability projects that empower youth to become stewards of the planet.',
+                '环境教育和实践可持续发展项目，赋能青年成为地球的守护者。'
               ),
               color: 'linear-gradient(135deg, #1e3355, #253d66)',
             },
@@ -251,7 +251,7 @@ export default function Home() {
                 '市中心社区花园正式开放'
               ),
               excerpt: t(
-                'The Laloli Community Garden is now open, providing fresh produce and green space to over 200 local families.',
+                'The LALOLI Community Garden is now open, providing fresh produce and green space to over 200 local families.',
                 '乐荔社区花园现已开放，为200多个本地家庭提供新鲜农产品和绿色空间。'
               ),
               bg: 'linear-gradient(135deg, #2d4a7a, #48bb78)',

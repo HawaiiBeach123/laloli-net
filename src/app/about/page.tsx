@@ -12,7 +12,7 @@ const timeline = [
     year: '2010',
     title: { en: 'Founded', zh: '成立' },
     desc: {
-      en: 'Laloli Foundation was established with a vision to bridge communities through compassion and education.',
+      en: 'LALOLI Pathway was established with a vision to bridge communities through compassion and education.',
       zh: '拉洛利基金会成立，致力于通过关爱和教育连接社区。',
     },
   },
@@ -146,7 +146,7 @@ export default function AboutPage() {
             <div className={styles.storyText}>
               <p>
                 {t(
-                  'Laloli Foundation began in 2010 as a small grassroots initiative with a bold dream: to build bridges of hope and understanding across communities. What started as a handful of volunteers has grown into a movement touching tens of thousands of lives around the world.',
+                  'LALOLI Pathway began in 2010 as a small grassroots initiative with a bold dream: to build bridges of hope and understanding across communities. What started as a handful of volunteers has grown into a movement touching tens of thousands of lives around the world.',
                   '拉洛利基金会始于2010年的一个小型草根倡议，怀揣着一个大胆的梦想：在社区间架起希望与理解的桥梁。从最初的几名志愿者，已经发展成为影响全球数万人的运动。',
                 )}
               </p>

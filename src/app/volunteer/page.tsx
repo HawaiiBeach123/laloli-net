@@ -112,8 +112,8 @@ export default function VolunteerPage() {
   const testimonials = [
     {
       text: t(
-        'Volunteering with Laloli has been one of the most rewarding experiences of my life. Seeing the children light up during our sessions is priceless.',
-        '在Laloli做志愿者是我一生中最有价值的经历之一。看到孩子们在我们的课程中发光发亮，这是无价的。'
+        'Volunteering with LALOLI has been one of the most rewarding experiences of my life. Seeing the children light up during our sessions is priceless.',
+        '在LALOLI做志愿者是我一生中最有价值的经历之一。看到孩子们在我们的课程中发光发亮，这是无价的。'
       ),
       name: t('Sarah Chen', '陈莎拉'),
       role: t('Tutor Volunteer, 2 years', '辅导志愿者，2年'),

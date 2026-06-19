@@ -8,12 +8,12 @@ const featuredArticle = {
   date: { en: 'June 15, 2026', zh: '2026年6月15日' },
   category: { en: 'Impact Report', zh: '影响报告' },
   title: {
-    en: 'Laloli Foundation Reaches 10,000 Families Served Milestone',
-    zh: 'Laloli基金会达成服务10,000个家庭的里程碑',
+    en: 'LALOLI Pathway Reaches 10,000 Families Served Milestone',
+    zh: 'LALOLI Pathway达成服务10,000个家庭的里程碑',
   },
   excerpt: {
-    en: 'After five years of dedicated community work, the Laloli Foundation has officially served over 10,000 families across multiple regions. This achievement reflects the collective effort of our volunteers, donors, and community partners who believe in building bridges of hope and compassion.',
-    zh: '经过五年的社区服务工作，Laloli基金会已正式服务超过10,000个家庭，覆盖多个地区。这一成就体现了我们的志愿者、捐助者和社区合作伙伴的共同努力，他们相信建设希望与关爱的桥梁。',
+    en: 'After five years of dedicated community work, the LALOLI Pathway has officially served over 10,000 families across multiple regions. This achievement reflects the collective effort of our volunteers, donors, and community partners who believe in building bridges of hope and compassion.',
+    zh: '经过五年的社区服务工作，LALOLI Pathway已正式服务超过10,000个家庭，覆盖多个地区。这一成就体现了我们的志愿者、捐助者和社区合作伙伴的共同努力，他们相信建设希望与关爱的桥梁。',
   },
   readTime: { en: '5 min read', zh: '5分钟阅读' },
 };
@@ -136,8 +136,8 @@ export default function NewsPage() {
           <h1>{t('News & Stories', '新闻与故事')}</h1>
           <p>
             {t(
-              'Stay up to date with the latest stories, announcements, and impact reports from the Laloli Foundation.',
-              '了解Laloli基金会的最新故事、公告和影响报告。'
+              'Stay up to date with the latest stories, announcements, and impact reports from the LALOLI Pathway.',
+              '了解LALOLI Pathway的最新故事、公告和影响报告。'
             )}
           </p>
         </div>

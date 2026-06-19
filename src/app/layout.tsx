@@ -3,14 +3,14 @@ import "./globals.css";
 import ClientLayout from "./ClientLayout";
 
 export const metadata: Metadata = {
-  title: "Laloli Foundation — Building Bridges of Hope",
-  description: "Laloli Foundation is a nonprofit organization dedicated to building bridges of hope and compassion across communities through education, cultural exchange, and community service.",
-  keywords: "nonprofit, foundation, community, volunteer, donate, education, cultural exchange",
+  title: "LALOLI Pathway — Laugh, Love, Live",
+  description: "LALOLI Pathway Inc. empowers children and young adults through accessible education, mental health support, mentorship, and AI-driven learning tools. Rooted in Laugh, Love, Live.",
+  keywords: "LALOLI, pathway, nonprofit, education, youth, mental health, mentorship, AI learning, laugh love live",
   openGraph: {
-    title: "Laloli Foundation",
-    description: "Building bridges of hope and compassion across communities.",
+    title: "LALOLI Pathway",
+    description: "Empowering children and young adults — Laugh, Love, Live.",
     url: "https://laloli.net",
-    siteName: "Laloli Foundation",
+    siteName: "LALOLI Pathway",
     type: "website",
   },
 };

@@ -12,8 +12,8 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     question: {
-      en: 'How can I volunteer with Laloli Foundation?',
-      zh: '我如何在乐乐力基金会做志愿者？',
+      en: 'How can I volunteer with LALOLI Pathway?',
+      zh: '我如何在LALOLI Pathway做志愿者？',
     },
     answer: {
       en: 'We welcome volunteers of all backgrounds! Simply fill out the contact form above or email us at volunteer@laloli.net. We offer flexible scheduling and a variety of roles to match your skills and interests.',
@@ -26,8 +26,8 @@ const faqs: FAQItem[] = [
       zh: '我的捐款可以免税吗？',
     },
     answer: {
-      en: 'Yes! Laloli Foundation is a registered 501(c)(3) nonprofit organization. All donations are tax-deductible to the fullest extent allowed by law. We provide receipts for all contributions.',
-      zh: '是的！乐乐力基金会是注册的501(c)(3)非营利组织。所有捐款在法律允许的最大范围内均可免税。我们为所有捐款提供收据。',
+      en: 'Yes! LALOLI Pathway is a registered 501(c)(3) nonprofit organization. All donations are tax-deductible to the fullest extent allowed by law. We provide receipts for all contributions.',
+      zh: '是的！LALOLI Pathway是注册的501(c)(3)非营利组织。所有捐款在法律允许的最大范围内均可免税。我们为所有捐款提供收据。',
     },
   },
   {
@@ -42,7 +42,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: {
-      en: 'How can my organization partner with Laloli?',
+      en: 'How can my organization partner with LALOLI?',
       zh: '我的组织如何与乐乐力合作？',
     },
     answer: {
@@ -221,7 +221,7 @@ export default function ContactPage() {
             <div className={styles.mapDot} style={{ top: '40%', left: '35%' }} />
             <span className={styles.mapIcon}>🗺️</span>
             <div className={styles.mapText}>
-              <h3>{t('Laloli Foundation HQ', '乐乐力基金会总部')}</h3>
+              <h3>{t('LALOLI Pathway HQ', 'LALOLI Pathway总部')}</h3>
               <p>{t('123 Hope Street, San Francisco, CA 94102', '旧金山市希望街123号，加州 94102')}</p>
             </div>
           </div>

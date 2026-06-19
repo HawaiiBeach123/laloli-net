@@ -25,7 +25,7 @@ const upcomingEvents = [
     year: '2026',
     title: { en: 'Youth Leadership Workshop', zh: '青少年领导力工作坊' },
     time: { en: '1:00 PM – 5:00 PM', zh: '下午1:00 – 下午5:00' },
-    location: { en: 'Laloli Community Center', zh: 'Laloli社区中心' },
+    location: { en: 'LALOLI Community Center', zh: 'LALOLI社区中心' },
     description: {
       en: 'An interactive workshop empowering young leaders with skills in public speaking, project management, and community organizing.',
       zh: '一个互动式工作坊，培养年轻领导者的公众演讲、项目管理和社区组织能力。',

@@ -26,7 +26,7 @@ export default function Header() {
       <div className={styles.inner}>
         <Link href="/" className={styles.logo}>
           <span className={styles.logoIcon}>🌿</span>
-          <span className={styles.logoText}>Laloli</span>
+          <span className={styles.logoText}>LALOLI</span>
         </Link>
 
         <nav className={`${styles.nav} ${mobileOpen ? styles.navOpen : ''}`}>
