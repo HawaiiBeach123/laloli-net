@@ -56,8 +56,9 @@ export default function Footer() {
           <div className={styles.linkGroup}>
             <h4>{t('Contact', '联系方式')}</h4>
             <p>📧 info@laloli.net</p>
-            <p>📞 (555) 123-4567</p>
-            <p>📍 San Francisco, CA</p>
+            <p>📞 (408) 892-6366</p>
+            <p>📍 Cupertino, CA</p>
+            <p>🌺 Keaau, HI</p>
           </div>
         </div>
 
