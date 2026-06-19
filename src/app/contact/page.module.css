@@ -543,3 +543,13 @@
     padding: 0 var(--space-lg) var(--space-md);
   }
 }
+
+/* Form Alert */
+.formAlert {
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: var(--space-md);
+  animation: fadeInUp 0.3s ease;
+}

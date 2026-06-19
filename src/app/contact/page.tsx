@@ -87,9 +87,40 @@ const subjectOptions = [
 export default function ContactPage() {
   const { t } = useI18n();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('sending');
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    formData.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY || 'YOUR_ACCESS_KEY_HERE');
+    formData.append('subject', `LALOLI Contact: ${formData.get('subject_select')}`);
+    formData.append('from_name', 'LALOLI Pathway Website');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success) {
+        setFormStatus('success');
+        form.reset();
+        setTimeout(() => setFormStatus('idle'), 5000);
+      } else {
+        setFormStatus('error');
+        setTimeout(() => setFormStatus('idle'), 5000);
+      }
+    } catch {
+      setFormStatus('error');
+      setTimeout(() => setFormStatus('idle'), 5000);
+    }
   };
 
   return (
@@ -127,13 +158,26 @@ export default function ContactPage() {
                   '填写下面的表格，我们将在24小时内回复您。'
                 )}
               </p>
-              <form className={styles.formGrid} onSubmit={(e) => e.preventDefault()}>
+
+              {formStatus === 'success' && (
+                <div className={styles.formAlert} style={{ background: 'rgba(72, 187, 120, 0.1)', color: '#48bb78', border: '1px solid rgba(72, 187, 120, 0.3)' }}>
+                  ✅ {t('Message sent successfully! We\'ll get back to you soon.', '消息发送成功！我们会尽快回复您。')}
+                </div>
+              )}
+              {formStatus === 'error' && (
+                <div className={styles.formAlert} style={{ background: 'rgba(252, 129, 129, 0.1)', color: '#fc8181', border: '1px solid rgba(252, 129, 129, 0.3)' }}>
+                  ❌ {t('Failed to send message. Please try again or email us directly.', '消息发送失败。请重试或直接发送邮件给我们。')}
+                </div>
+              )}
+
+              <form className={styles.formGrid} onSubmit={handleSubmit}>
                 <div className={styles.formGroup}>
                   <label className={styles.formLabel}>
                     {t('Full Name', '姓名')} *
                   </label>
                   <input
                     type="text"
+                    name="name"
                     className={styles.formInput}
                     placeholder={t('John Doe', '请输入姓名')}
                     required
@@ -145,6 +189,7 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     className={styles.formInput}
                     placeholder={t('john@example.com', '请输入邮箱')}
                     required
@@ -154,7 +199,7 @@ export default function ContactPage() {
                   <label className={styles.formLabel}>
                     {t('Subject', '主题')} *
                   </label>
-                  <select className={styles.formSelect} required>
+                  <select className={styles.formSelect} name="subject_select" required>
                     <option value="">{t('Select a subject...', '选择一个主题...')}</option>
                     {subjectOptions.map((opt, i) => (
                       <option key={i} value={opt.en}>
@@ -168,6 +213,7 @@ export default function ContactPage() {
                     {t('Message', '留言')} *
                   </label>
                   <textarea
+                    name="message"
                     className={styles.formTextarea}
                     placeholder={t(
                       'Tell us how we can help you...',
@@ -176,8 +222,11 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-                <button type="submit" className={styles.submitButton}>
-                  {t('Send Message', '发送消息')} ✨
+                <button type="submit" className={styles.submitButton} disabled={formStatus === 'sending'}>
+                  {formStatus === 'sending'
+                    ? t('Sending...', '发送中...')
+                    : t('Send Message', '发送消息')
+                  } {formStatus !== 'sending' && '✨'}
                 </button>
               </form>
             </div>
