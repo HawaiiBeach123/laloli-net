@@ -34,12 +34,15 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-md);
   margin-bottom: var(--space-md);
 }
 
-.logo span:first-child {
-  font-size: 1.5rem;
+.logoImage {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
 }
 
 .logoText {

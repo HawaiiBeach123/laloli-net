@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useI18n } from '@/lib/i18n';
 import { useState } from 'react';
 import styles from './Header.module.css';
@@ -26,8 +27,14 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoIcon}>🌿</span>
-          <span className={styles.logoText}>LALOLI</span>
+          <Image
+            src="/images/logo-horizontal.png"
+            alt="LALOLI Pathway"
+            width={160}
+            height={50}
+            className={styles.logoImage}
+            priority
+          />
         </Link>
 
         <nav className={`${styles.nav} ${mobileOpen ? styles.navOpen : ''}`}>

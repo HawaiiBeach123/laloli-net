@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useI18n } from '@/lib/i18n';
 import styles from './Footer.module.css';
 
@@ -19,7 +20,13 @@ export default function Footer() {
         <div className={styles.grid}>
           <div className={styles.brand}>
             <div className={styles.logo}>
-              <span>🌿</span>
+              <Image
+                src="/images/logo-badge.png"
+                alt="LALOLI Pathway"
+                width={70}
+                height={70}
+                className={styles.logoImage}
+              />
               <span className={styles.logoText}>LALOLI Pathway</span>
             </div>
             <p className={styles.tagline}>
