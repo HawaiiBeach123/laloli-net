@@ -308,70 +308,50 @@
   padding: 0 var(--space-lg);
 }
 
-.mapPlaceholder {
-  width: 100%;
-  height: 350px;
+.mapsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.mapCard {
+  background: var(--color-white);
   border-radius: var(--radius-xl);
-  background: linear-gradient(135deg, #e8e4dd 0%, #d9d3c7 50%, #c9c0b0 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
-  position: relative;
   overflow: hidden;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.mapPlaceholder::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(0,0,0,0.03) 40px, rgba(0,0,0,0.03) 41px),
-    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(0,0,0,0.03) 40px, rgba(0,0,0,0.03) 41px);
+.mapCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
-.mapIcon {
-  font-size: 3rem;
-  position: relative;
-  z-index: 1;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+.mapEmbed {
+  width: 100%;
+  line-height: 0;
 }
 
-.mapText {
-  position: relative;
-  z-index: 1;
-  text-align: center;
+.mapEmbed iframe {
+  width: 100%;
+  display: block;
 }
 
-.mapText h3 {
+.mapInfo {
+  padding: var(--space-lg) var(--space-xl);
+}
+
+.mapInfo h3 {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--color-primary);
   margin-bottom: 4px;
 }
 
-.mapText p {
+.mapInfo p {
   font-size: 0.9rem;
   color: var(--color-text-light);
-}
-
-.mapDot {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  background: var(--color-accent);
-  border-radius: 50%;
-  z-index: 1;
-  box-shadow: 0 0 0 4px rgba(212, 168, 67, 0.3);
-  animation: mapPulse 2s ease-in-out infinite;
-}
-
-@keyframes mapPulse {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(212, 168, 67, 0.3); }
-  50% { box-shadow: 0 0 0 8px rgba(212, 168, 67, 0.1); }
 }
 
 /* FAQ Section */
@@ -530,8 +510,8 @@
     padding: var(--space-xl);
   }
 
-  .mapPlaceholder {
-    height: 250px;
+  .mapsGrid {
+    grid-template-columns: 1fr;
   }
 
   .faqQuestion {

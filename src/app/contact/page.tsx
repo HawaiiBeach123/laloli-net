@@ -55,18 +55,23 @@ const faqs: FAQItem[] = [
 const contactInfo = [
   {
     icon: '📍',
-    title: { en: 'Our Office', zh: '我们的办公室' },
-    content: { en: '123 Hope Street, Suite 200\nSan Francisco, CA 94102', zh: '旧金山市希望街123号，200室\n加利福尼亚州 94102' },
+    title: { en: 'California Office', zh: '加州办公室' },
+    content: { en: 'Cupertino, CA 95014', zh: '加州库比蒂诺 95014' },
   },
   {
-    icon: '📞',
-    title: { en: 'Phone', zh: '电话' },
-    content: { en: '+1 (415) 555-0123\nMon-Fri: 9:00 AM - 6:00 PM', zh: '+1 (415) 555-0123\n周一至周五：上午9:00 - 下午6:00' },
+    icon: '🌺',
+    title: { en: 'Hawaii Office', zh: '夏威夷办公室' },
+    content: { en: '15-1719 5th Ave\nKeaau, HI 96749', zh: '15-1719 5th Ave\n凯阿奥, 夏威夷 96749' },
   },
   {
     icon: '✉️',
     title: { en: 'Email', zh: '电子邮件' },
-    content: { en: 'info@laloli.net\nvolunteer@laloli.net', zh: 'info@laloli.net\nvolunteer@laloli.net' },
+    content: { en: 'info@laloli.net', zh: 'info@laloli.net' },
+  },
+  {
+    icon: '📞',
+    title: { en: 'Phone', zh: '电话' },
+    content: { en: '(408) 892-6366', zh: '(408) 892-6366' },
   },
   {
     icon: '🕐',
@@ -263,15 +268,48 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
+      {/* Maps Section */}
       <section className={styles.mapSection}>
         <div className={styles.mapContainer}>
-          <div className={styles.mapPlaceholder}>
-            <div className={styles.mapDot} style={{ top: '40%', left: '35%' }} />
-            <span className={styles.mapIcon}>🗺️</span>
-            <div className={styles.mapText}>
-              <h3>{t('LALOLI Pathway HQ', 'LALOLI Pathway总部')}</h3>
-              <p>{t('123 Hope Street, San Francisco, CA 94102', '旧金山市希望街123号，加州 94102')}</p>
+          <h2 style={{ textAlign: 'center', marginBottom: 'var(--space-xl)', color: 'var(--color-primary)' }}>
+            {t('Our Offices', '我们的办公室')}
+          </h2>
+          <div className={styles.mapsGrid}>
+            <div className={styles.mapCard}>
+              <div className={styles.mapEmbed}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50752.05216784!2d-122.06985!3d37.3229978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb4571bd377ab%3A0x394d3fe1a3e178b4!2sCupertino%2C%20CA%2095014!5e0!3m2!1sen!2sus!4v1"
+                  width="100%"
+                  height="280"
+                  style={{ border: 0, borderRadius: '12px' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Cupertino Office"
+                />
+              </div>
+              <div className={styles.mapInfo}>
+                <h3>📍 {t('California Office', '加州办公室')}</h3>
+                <p>Cupertino, CA 95014</p>
+              </div>
+            </div>
+            <div className={styles.mapCard}>
+              <div className={styles.mapEmbed}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3789.5!2d-154.9614!3d19.6414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7953e6d4e2c2f0f5%3A0x0!2s15-1719+5th+Ave%2C+Keaau%2C+HI+96749!5e0!3m2!1sen!2sus!4v1"
+                  width="100%"
+                  height="280"
+                  style={{ border: 0, borderRadius: '12px' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Hawaii Office"
+                />
+              </div>
+              <div className={styles.mapInfo}>
+                <h3>🌺 {t('Hawaii Office', '夏威夷办公室')}</h3>
+                <p>15-1719 5th Ave, Keaau, HI 96749</p>
+              </div>
             </div>
           </div>
         </div>

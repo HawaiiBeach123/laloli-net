@@ -6,7 +6,7 @@ import { useState } from 'react';
 import styles from './Header.module.css';
 
 // TODO: Uncomment pages as they become ready
-const navItems = [
+const navItems: { href: string; en: string; zh: string }[] = [
   // { href: '/about', en: 'About', zh: '关于我们' },
   // { href: '/programs', en: 'Programs', zh: '项目服务' },
   // { href: '/events', en: 'Events', zh: '活动日历' },
