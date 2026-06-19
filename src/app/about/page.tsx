@@ -17,7 +17,7 @@ const timeline = [
     },
   },
   {
-    year: '2024',
+    year: '2025',
     title: { en: '501(c)(3) Status', zh: '获得非营利资质' },
     desc: {
       en: 'Received 501(c)(3) nonprofit designation, enabling tax-deductible donations and community partnerships.',
