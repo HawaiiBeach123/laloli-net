@@ -6,14 +6,14 @@ import styles from './page.module.css';
 
 const featuredArticle = {
   date: { en: 'June 15, 2026', zh: '2026年6月15日' },
-  category: { en: 'Impact Report', zh: '影响报告' },
+  category: { en: 'Milestone', zh: '里程碑' },
   title: {
-    en: 'LALOLI Pathway Reaches 10,000 Families Served Milestone',
-    zh: 'LALOLI Pathway达成服务10,000个家庭的里程碑',
+    en: 'LALOLI Pathway Celebrates 500 Students Served in First Year',
+    zh: 'LALOLI Pathway庆祝首年服务500名学生',
   },
   excerpt: {
-    en: 'After five years of dedicated community work, the LALOLI Pathway has officially served over 10,000 families across multiple regions. This achievement reflects the collective effort of our volunteers, donors, and community partners who believe in building bridges of hope and compassion.',
-    zh: '经过五年的社区服务工作，LALOLI Pathway已正式服务超过10,000个家庭，覆盖多个地区。这一成就体现了我们的志愿者、捐助者和社区合作伙伴的共同努力，他们相信建设希望与关爱的桥梁。',
+    en: 'Since launching our first programs in 2025, LALOLI Pathway has served over 500 K-12 students through AI-powered learning tools, mental health workshops, and mentorship. This milestone reflects the dedication of our growing volunteer team and the trust of families in our mission to help youth Laugh, Love, and Live.',
+    zh: '自2025年启动首批项目以来，LALOLI Pathway已通过AI学习工具、心理健康工作坊和导师辅导服务了500多名K-12学生。这一里程碑体现了志愿者团队的奉献和家庭对我们使命的信任。',
   },
   readTime: { en: '5 min read', zh: '5分钟阅读' },
 };
@@ -100,12 +100,12 @@ const articles = [
     category: { en: 'Fundraising', zh: '筹款' },
     categoryColor: '#d4a843',
     title: {
-      en: 'Annual Giving Campaign Exceeds Goal by 120%',
-      zh: '年度捐赠活动超额完成目标120%',
+      en: 'First Fundraising Campaign Exceeds Goal',
+      zh: '首次筹款活动超额完成目标',
     },
     excerpt: {
-      en: 'Thanks to the incredible generosity of our supporters, this year\'s annual giving campaign raised over $150,000 for community programs.',
-      zh: '感谢支持者们的慷慨解囊，今年的年度捐赠活动为社区项目筹集了超过15万美元。',
+      en: 'Thanks to the generosity of our early supporters, our inaugural fundraising campaign raised over $15,000 for youth education and mental health programs.',
+      zh: '感谢早期支持者的慷慨解囊，我们的首次筹款活动为青少年教育和心理健康项目筹集了超过1.5万美元。',
     },
     readTime: { en: '3 min read', zh: '3分钟阅读' },
   },

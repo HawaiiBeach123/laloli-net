@@ -9,43 +9,43 @@ import styles from './page.module.css';
 
 const timeline = [
   {
-    year: '2010',
+    year: '2024',
     title: { en: 'Founded', zh: '成立' },
     desc: {
-      en: 'LALOLI Pathway was established with a vision to bridge communities through compassion and education.',
-      zh: '拉洛利基金会成立，致力于通过关爱和教育连接社区。',
-    },
-  },
-  {
-    year: '2013',
-    title: { en: 'First Community Center', zh: '首个社区中心' },
-    desc: {
-      en: 'Opened our first community center, providing resources and programs for underserved families.',
-      zh: '开设首个社区中心，为弱势家庭提供资源和项目。',
-    },
-  },
-  {
-    year: '2016',
-    title: { en: 'Cultural Bridge Program', zh: '文化桥梁项目' },
-    desc: {
-      en: 'Launched the Cultural Bridge Program connecting diverse communities through arts and dialogue.',
-      zh: '启动文化桥梁项目，通过艺术和对话连接多元社区。',
-    },
-  },
-  {
-    year: '2020',
-    title: { en: '10th Anniversary', zh: '十周年' },
-    desc: {
-      en: 'Celebrated a decade of impact — 50,000 lives touched, 200+ community events organized.',
-      zh: '庆祝成立十周年——影响50,000人，组织200+社区活动。',
+      en: 'LALOLI Pathway Inc. was founded with a mission to empower children and young adults through education and well-being.',
+      zh: 'LALOLI Pathway Inc. 成立，致力于通过教育和身心健康赋能儿童和青年。',
     },
   },
   {
     year: '2024',
-    title: { en: 'Global Expansion', zh: '全球拓展' },
+    title: { en: '501(c)(3) Status', zh: '获得非营利资质' },
     desc: {
-      en: 'Expanded operations internationally, partnering with organizations in 12 countries.',
-      zh: '将业务拓展至国际，与12个国家的组织合作。',
+      en: 'Received 501(c)(3) nonprofit designation, enabling tax-deductible donations and community partnerships.',
+      zh: '获得501(c)(3)非营利资质，支持免税捐赠和社区合作。',
+    },
+  },
+  {
+    year: '2025',
+    title: { en: 'First Programs Launch', zh: '首批项目启动' },
+    desc: {
+      en: 'Launched AI-Powered Learning Hub and Youth Wellness Program, serving our first cohort of K-12 students.',
+      zh: '启动AI学习中心和青少年身心健康计划，服务首批K-12学生。',
+    },
+  },
+  {
+    year: '2025',
+    title: { en: 'Mentorship Network', zh: '导师网络' },
+    desc: {
+      en: 'Established a volunteer mentorship network connecting industry professionals with youth in need of guidance.',
+      zh: '建立志愿者导师网络，连接行业专业人士与需要指导的青少年。',
+    },
+  },
+  {
+    year: '2026',
+    title: { en: 'Growing Impact', zh: '扩大影响力' },
+    desc: {
+      en: 'Expanding programs to reach more communities, integrating environmental education and creative arts initiatives.',
+      zh: '扩展项目覆盖更多社区，整合环保教育和创意艺术活动。',
     },
   },
 ];
@@ -146,8 +146,8 @@ export default function AboutPage() {
             <div className={styles.storyText}>
               <p>
                 {t(
-                  'LALOLI Pathway began in 2010 as a small grassroots initiative with a bold dream: to build bridges of hope and understanding across communities. What started as a handful of volunteers has grown into a movement touching tens of thousands of lives around the world.',
-                  '拉洛利基金会始于2010年的一个小型草根倡议，怀揣着一个大胆的梦想：在社区间架起希望与理解的桥梁。从最初的几名志愿者，已经发展成为影响全球数万人的运动。',
+                  'LALOLI Pathway was founded in 2024 with a bold vision: to empower children and young adults by fostering both intellectual growth and emotional well-being. Rooted in our core philosophy — Laugh, Love, Live — we inspire joy, nurture meaningful connections, and encourage individuals to embrace life with confidence and purpose.',
+                  'LALOLI Pathway 成立于2024年，怀揣一个大胆的愿景：通过培养智力成长和情感幸福来赋能儿童和青年。根植于我们的核心理念——笑者，爱者，活着——我们激发快乐，培养有意义的联系，鼓励个人自信而有目标地拥抱生活。',
                 )}
               </p>
               <p>

@@ -47,10 +47,10 @@ export default function DonatePage() {
   ];
 
   const impacts = [
-    { emoji: '📚', number: '5,200+', label: t('Books Distributed', '图书已发放') },
-    { emoji: '👧', number: '1,800+', label: t('Children Supported', '受助儿童') },
-    { emoji: '🏫', number: '45', label: t('Partner Schools', '合作学校') },
-    { emoji: '🌍', number: '12', label: t('Countries Reached', '覆盖国家') },
+    { emoji: '📚', number: '200+', label: t('Learning Kits Provided', '学习套件已发放') },
+    { emoji: '👧', number: '500+', label: t('Students Supported', '受助学生') },
+    { emoji: '🏫', number: '5', label: t('Partner Schools', '合作学校') },
+    { emoji: '🧠', number: '30+', label: t('Wellness Workshops', '健康工作坊') },
   ];
 
   const partners = [

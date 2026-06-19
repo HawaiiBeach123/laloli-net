@@ -26,7 +26,7 @@ const boardMembers: BoardMember[] = [
     name: { en: 'Linda Wang', zh: '王琳达' },
     title: { en: 'Chairperson', zh: '主席' },
     bio: {
-      en: 'With 20 years of nonprofit leadership, Linda brings strategic vision and deep community connections to LALOLI Pathway.',
+      en: 'A passionate advocate for youth education and well-being, Linda founded LALOLI Pathway to bring the Laugh, Love, Live philosophy to communities.',
       zh: '凭借20年的非营利组织领导经验，琳达为LALOLI Pathway带来了战略远见和深厚的社区联系。'
     },
   },

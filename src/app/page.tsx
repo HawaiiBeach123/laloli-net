@@ -57,23 +57,23 @@ export default function Home() {
             {[
               {
                 icon: '❤️',
-                number: '10,000+',
-                label: t('Lives Impacted', '受益人数'),
+                number: '500+',
+                label: t('Students Served', '服务学生'),
               },
               {
                 icon: '📚',
-                number: '50+',
+                number: '8',
                 label: t('Programs Launched', '已启动项目'),
               },
               {
                 icon: '🤝',
-                number: '200+',
+                number: '50+',
                 label: t('Active Volunteers', '活跃志愿者'),
               },
               {
                 icon: '🏆',
-                number: '15',
-                label: t('Years of Service', '年服务历程'),
+                number: '2024',
+                label: t('Year Founded', '成立年份'),
               },
             ].map((stat, i) => (
               <div className={styles.statCard} key={i}>

@@ -61,23 +61,23 @@ const programs = [
 const metrics = [
   {
     icon: '👥',
-    value: '50,000+',
-    label: { en: 'Lives Impacted', zh: '受益人数' },
+    value: '500+',
+    label: { en: 'Students Reached', zh: '服务学生' },
   },
   {
     icon: '📍',
-    value: '35+',
+    value: '5',
     label: { en: 'Communities Served', zh: '服务社区' },
   },
   {
     icon: '🤝',
-    value: '2,500+',
+    value: '50+',
     label: { en: 'Active Volunteers', zh: '活跃志愿者' },
   },
   {
     icon: '🏆',
-    value: '200+',
-    label: { en: 'Programs Completed', zh: '完成项目' },
+    value: '8',
+    label: { en: 'Programs Launched', zh: '已启动项目' },
   },
 ];
 
@@ -161,8 +161,8 @@ export default function ProgramsPage() {
             </h2>
             <p className={styles.sectionDesc}>
               {t(
-                'Numbers tell a story of dedication. Here\'s how our work has transformed communities since 2010.',
-                '数字讲述奉献的故事。以下是自2010年以来我们的工作如何改变社区。',
+                'Numbers tell a story of dedication. Here\'s how our work has begun transforming communities since 2024.',
+                '数字讲述奉献的故事。以下是自2024年以来我们的工作如何开始改变社区。',
               )}
             </p>
           </div>
