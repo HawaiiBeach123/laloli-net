@@ -8,7 +8,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   return (
     <I18nProvider>
       <Header />
-      <main style={{ paddingTop: '72px' }}>{children}</main>
+      {/* Must match the header height in Header.module.css */}
+      <main style={{ paddingTop: '120px' }}>{children}</main>
       <Footer />
     </I18nProvider>
   );

@@ -16,8 +16,8 @@ const faqs: FAQItem[] = [
       zh: '我如何在LALOLI Pathway做志愿者？',
     },
     answer: {
-      en: 'We welcome volunteers of all backgrounds! Simply fill out the contact form above or email us at volunteer@laloli.net. We offer flexible scheduling and a variety of roles to match your skills and interests.',
-      zh: '我们欢迎各种背景的志愿者！只需填写上面的联系表格或发送电子邮件至 volunteer@laloli.net。我们提供灵活的时间安排和各种角色，以匹配您的技能和兴趣。',
+      en: 'We welcome volunteers of all backgrounds! Simply fill out the contact form above or email us at info@laloli.net. We offer flexible scheduling and a variety of roles to match your skills and interests.',
+      zh: '我们欢迎各种背景的志愿者！只需填写上面的联系表格或发送电子邮件至 info@laloli.net。我们提供灵活的时间安排和各种角色，以匹配您的技能和兴趣。',
     },
   },
   {
@@ -28,16 +28,6 @@ const faqs: FAQItem[] = [
     answer: {
       en: 'Yes! LALOLI Pathway is a registered 501(c)(3) nonprofit organization. All donations are tax-deductible to the fullest extent allowed by law. We provide receipts for all contributions.',
       zh: '是的！LALOLI Pathway是注册的501(c)(3)非营利组织。所有捐款在法律允许的最大范围内均可免税。我们为所有捐款提供收据。',
-    },
-  },
-  {
-    question: {
-      en: 'What programs do you offer for youth?',
-      zh: '你们为青少年提供哪些项目？',
-    },
-    answer: {
-      en: 'We offer mentorship programs, after-school tutoring, cultural workshops, art classes, and summer camps. Our programs are designed for youth ages 6-18 and are available in both English and Chinese.',
-      zh: '我们提供导师计划、课后辅导、文化工作坊、艺术课程和夏令营。我们的项目面向6-18岁的青少年，提供中英文双语服务。',
     },
   },
   {

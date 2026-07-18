@@ -15,8 +15,7 @@ const navItems: { href: string; en: string; zh: string }[] = [
   // { href: '/gallery', en: 'Gallery', zh: '图片集' },
   // { href: '/team', en: 'Team', zh: '团队成员' },
   // { href: '/volunteer', en: 'Volunteer', zh: '志愿服务' },
-  // { href: '/donate', en: 'Donate', zh: '捐赠支持' },
-  { href: '/donate', en: 'Donate', zh: '捐赠支持' },
+  // NOTE: Donate is intentionally not in the menu — the highlighted Donate button next to it covers it
   { href: '/contact', en: 'Contact', zh: '联系我们' },
 ];
 

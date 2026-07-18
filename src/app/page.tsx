@@ -203,9 +203,11 @@ export default function Home() {
                 <span className={styles.programTag}>{program.tag}</span>
                 <h3 className={styles.programCardTitle}>{program.title}</h3>
                 <p className={styles.programCardDesc}>{program.desc}</p>
+                {/* TODO: restore this link when the Programs page goes live
                 <Link href="/programs" className={styles.programLink}>
                   {t('Learn More', '了解更多')} →
                 </Link>
+                */}
               </div>
             </div>
           ))}
@@ -231,7 +233,8 @@ export default function Home() {
             )}
           </p>
           <div className={styles.ctaButtons}>
-            <Link href="/volunteer" className="btn btn-primary">
+            {/* Points to Contact until the Volunteer page goes live */}
+            <Link href="/contact" className="btn btn-primary">
               {t('Become a Volunteer', '成为志愿者')} →
             </Link>
             <Link href="/donate" className="btn btn-secondary">
