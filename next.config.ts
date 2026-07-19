@@ -4,6 +4,9 @@ import type { NextConfig } from "next";
 // app URL, e.g. https://dhds-next.vercel.app  — until it's set, nothing changes.
 const DHDS_ORIGIN = process.env.DHDS_ORIGIN;
 
+// Same pattern for DM (Irene's LifeTracker app) at laloli.net/DM.
+const DM_ORIGIN = process.env.DM_ORIGIN;
+
 const nextConfig: NextConfig = {
   async redirects() {
     // TODO: Remove each entry as its page gets real content and goes live.
@@ -26,11 +29,20 @@ const nextConfig: NextConfig = {
   async rewrites() {
     // Serve the separate DHDS app at laloli.net/DHDS by transparently
     // forwarding to its own deployment. No-op until DHDS_ORIGIN is set.
-    if (!DHDS_ORIGIN) return [];
-    return [
-      { source: "/DHDS", destination: `${DHDS_ORIGIN}/DHDS` },
-      { source: "/DHDS/:path*", destination: `${DHDS_ORIGIN}/DHDS/:path*` },
-    ];
+    const rules = [];
+    if (DHDS_ORIGIN) {
+      rules.push(
+        { source: "/DHDS", destination: `${DHDS_ORIGIN}/DHDS` },
+        { source: "/DHDS/:path*", destination: `${DHDS_ORIGIN}/DHDS/:path*` },
+      );
+    }
+    if (DM_ORIGIN) {
+      rules.push(
+        { source: "/DM", destination: `${DM_ORIGIN}/DM` },
+        { source: "/DM/:path*", destination: `${DM_ORIGIN}/DM/:path*` },
+      );
+    }
+    return rules;
   },
 };
 
